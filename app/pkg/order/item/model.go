@@ -10,4 +10,5 @@ type OrderItem struct {
 	ProductName string
 	Qty         uint
 	Price       float32
+	TotalPrice  float32 // Qty * Price
 }

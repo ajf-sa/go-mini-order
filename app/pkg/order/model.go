@@ -7,13 +7,21 @@ import (
 
 type Order struct {
 	gorm.Model
-	ClientID    string
-	UserID      uint
-	OrderItems  []*item.OrderItem
-	OrderStatus []*OrderStatus
-	Address     string
-	Phone       string
-	Email       string
+	ClientID       string
+	UserID         uint
+	OrderItems     []*item.OrderItem
+	OrderStatus    []*OrderStatus
+	PaymentOptions uint
+	PickUp         string
+	DropOff        string
+	DeliveryFees   float32
+	Notes          string
+	Phone          string
+	Email          string
+	TotalPrice     float32 //SUM(...OrderItems.TotalPrice)
+	// Payment_options
+	// Address string
+	// Promo_code
 }
 
 type OrderStatus struct {
